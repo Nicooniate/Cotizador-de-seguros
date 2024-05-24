@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="icon" href="/src/img/shield-.webp" type="image/x-icon">
+    <title>Shield +</title>
+</head>
+
+<body>
+    <button class="btn-moon shadow-effect" id="toggletheme"><i class="fa-solid fa-moon"></i></button>
+    <div class="container">
+        <h1>COTIZADOR DE SEGUROS</h1>
+        <div class="container-form">
+            <div>
+                <label>MARCA</label>
+                <select name="group" id="brand">
+                    <option value="marca" selected>Seleccione</option>
+                    <option value="toyota">TOYOTA</option>
+                    <option value="ford">FORD</option>
+                    <option value="renault">RENAULT</option>
+                    <option value="volkswagen">VOLKSWAGEN</option>
+                </select>
+            </div>
+            <div>
+                <label>MODELO</label>
+                <select name="model" id="model">
+                    <option value="modelo">Seleccione</option>
+                </select>
+            </div>
+            <div>
+                <label>AÑO</label>
+                <select name="year" id="year">
+                    <option value="AÑO">Seleccione</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                </select>
+            </div>
+            <div>
+                <label>Plan</label>
+                <input type="radio" name="plan" value="basico" class="radio" id="radioBasico" /> Basico
+                <input type="radio" name="plan" value="intermedio" class="radio" id="radioIntermedio" /> Intermedio
+                <input type="radio" name="plan" value="completo" class="radio" id="radioCompleto" /> Completo
+            </div>
+        </div>
+        <div class="btn-c">
+            <button id="btn-calculator" class="btn-c">Cotizar</button>
+        </div>
+    </div>
+</body>
+<!-- <script src="/src/Js/app.js"></script> -->
+<script src="/src/Js/index.js"></script>
+<script src="/src/Js/theme.js"></script>
+<script src="https://kit.fontawesome.com/b7c68c043b.js" crossorigin="anonymous"></script>
+<!-- lamamos a la biblioteca de iconos -->
+
+</html>
