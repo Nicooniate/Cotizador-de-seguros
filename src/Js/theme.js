@@ -25,8 +25,6 @@ function loadTheme() {
     if (isDarkMode) {
         document.body.classList.add("dark-mode");
         label_toggle.classList.add("dark-mode");
-        label_toggle.classList.add("dark-mode");
-        
     }
 }
 
