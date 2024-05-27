@@ -14,7 +14,7 @@ document.getElementById('brand').addEventListener('change', function(){
     const modelSelect = document.getElementById('model');
 
     // Limpiar las opciones anteriores
-    modelSelect.innerHTML = '<option value="modelo">Seleccione</option>';
+    modelSelect.innerHTML = '<option value="modelo">-- Seleccione --</option>';
 
     if (carModels[brand]) {
         // Añadir nuevas opciones

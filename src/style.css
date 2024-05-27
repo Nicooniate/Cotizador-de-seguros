@@ -83,28 +83,30 @@ body{
 display: flex;
 justify-content: center;
 flex-direction: column;
-background-color: #000000;
+background-color: #3a93f1;
 border-radius: 10px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.377);
 }
 
 .container h1 {
     text-align: center;
-    background-color:#3a93f1;
+    background-color:#ffffff;
     width: 600px;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 600;
     border-radius: 10px 10px 0 0;
+    color: #000000;
+
 }
 
 .container-form{
-    height: 500px;
-    width: 600px;
+    height: 300px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items:start;
     flex-direction: column;
 }
@@ -114,10 +116,57 @@ border-radius: 10px;
     left: 20px;
 }
 
+.container-form label{
+    color: #000000;
+    font-size: 20px;
+    font-weight:600;
+}
+
+.container-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    width: 400px;
+    position: absolute;
+    left: 150px;
+    top: -6px;
+}
+
+.container-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    color: #000000;
+    font-weight: 600;
+}
+
 .btn-c{
 display: flex;
 justify-content: center;
 align-items: center;
+flex-direction: column;
+padding: 10px;
+}
+
+.btn-c p {
+    background-color: #007bff;
+    color: black;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-c button{
@@ -125,12 +174,26 @@ align-items: center;
     align-items: center;
     justify-content: center;
     display: flex;
-    background-color: #007bff;
+    background-color: #ffffff;
     border: none;
-    width: 300px;
+    width: 150px;
     height: 30px;
     border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid #ccc;
+    cursor: pointer;
 }
+
+.btn-c button:hover{
+    box-shadow: 0 10px 10px #0000006d;
+}
+
+.btn-c button:active {
+    transform: translateY(3px);
+}
+
 
 
 /*ESTILOS DEL dark-mode*/
@@ -161,6 +224,5 @@ align-items: center;
 
         .dark-mode div {
             background-color: #434343a7;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.339);
         }
 /*///////////////////////////*/

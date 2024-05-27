@@ -15,9 +15,9 @@
         <h1>COTIZADOR DE SEGUROS</h1>
         <div class="container-form">
             <div>
-                <label>MARCA</label>
+                <label>Marca:</label>
                 <select name="group" id="brand">
-                    <option value="marca" selected>Seleccione</option>
+                    <option value="marca" selected>-- Seleccione --</option>
                     <option value="toyota">TOYOTA</option>
                     <option value="ford">FORD</option>
                     <option value="renault">RENAULT</option>
@@ -25,15 +25,15 @@
                 </select>
             </div>
             <div>
-                <label>MODELO</label>
+                <label>Modelo:</label>
                 <select name="model" id="model">
-                    <option value="modelo">Seleccione</option>
+                    <option value="modelo">-- Seleccione --</option>
                 </select>
             </div>
             <div>
-                <label>AÑO</label>
+                <label>Año:</label>
                 <select name="year" id="year">
-                    <option value="AÑO">Seleccione</option>
+                    <option value="AÑO">-- Seleccione --</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
@@ -47,15 +47,16 @@
                     <option value="2014">2014</option>
                 </select>
             </div>
-            <div>
-                <label>Plan</label>
+            <div class="container-input">
+                <label>Plan:</label>
                 <input type="radio" name="plan" value="basico" class="radio" id="radioBasico" /> Basico
                 <input type="radio" name="plan" value="intermedio" class="radio" id="radioIntermedio" /> Intermedio
                 <input type="radio" name="plan" value="completo" class="radio" id="radioCompleto" /> Completo
             </div>
         </div>
         <div class="btn-c">
-            <button id="btn-calculator" class="btn-c">Cotizar</button>
+            <p>Seleccione marca, modelo, año y plan</p>
+            <button id="btn-calculator" class="btn-c">COTIZAR</button>
         </div>
     </div>
 </body>
