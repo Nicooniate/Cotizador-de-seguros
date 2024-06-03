@@ -1,5 +1,6 @@
-// Obtenemos la etiqueta button para modificarla o añadirle eventos
 let label_toggle = document.getElementById("toggletheme");
+let btn_cotizar = document.getElementById("btn-cotizar");
+
 
 // Funcion para cambiar entre dark-mode y light-mode
 function toggleTheme() {
@@ -9,11 +10,13 @@ function toggleTheme() {
     // Esta funcion es la que aplica el dark-mode o el modo normal
     if (isDarkMode) {
         document.body.classList.remove("dark-mode");
+        btn_cotizar.classList.remove("btn-c-dark-mode");
         localStorage.setItem("darkMode", "false");
         label_toggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
         
     } else {
         document.body.classList.add("dark-mode");
+        btn_cotizar.classList.add("btn-c-dark-mode");
         localStorage.setItem("darkMode", "true");
         label_toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
@@ -24,7 +27,9 @@ function loadTheme() {
     const isDarkMode = localStorage.getItem("darkMode") === "true";
     if (isDarkMode) {
         document.body.classList.add("dark-mode");
+        btn_cotizar.classList.add("btn-c-dark-mode");
         label_toggle.classList.add("dark-mode");
+        label_toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
 }
 

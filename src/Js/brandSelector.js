@@ -8,6 +8,7 @@ const carModels = {
 let vehicleBrand = document.getElementById('brand').value;
 let vehicleModel = document.getElementById('model').value;
 let vehicleYear = document.getElementById('year').value;
+let btnGo = document.getElementById('btn-go');
 
 document.getElementById('brand').addEventListener('change', function(){
     const brand = this.value;
@@ -26,6 +27,7 @@ document.getElementById('brand').addEventListener('change', function(){
         });
     }
 });
+
 
 
 

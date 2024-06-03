@@ -11,13 +11,13 @@
 
 <body>
     <button class="btn-moon shadow-effect" id="toggletheme"><i class="fa-solid fa-moon"></i></button>
-    <div class="container">
+    <div class="container" id="card-container">
         <h1>COTIZADOR DE SEGUROS</h1>
         <div class="container-form">
             <div>
                 <label>Marca:</label>
-                <select name="group" id="brand">
-                    <option value="marca" selected>-- Seleccione --</option>
+                <select name="group" id="brand" class="warningSelector">
+                    <option value="-- Seleccione --" id="brandSelector">-- Seleccione --</option>
                     <option value="toyota">TOYOTA</option>
                     <option value="ford">FORD</option>
                     <option value="renault">RENAULT</option>
@@ -27,13 +27,13 @@
             <div>
                 <label>Modelo:</label>
                 <select name="model" id="model">
-                    <option value="modelo">-- Seleccione --</option>
+                    <option value="-- Seleccione --" id="modelSelector">-- Seleccione --</option>
                 </select>
             </div>
             <div>
                 <label>Año:</label>
                 <select name="year" id="year">
-                    <option value="AÑO">-- Seleccione --</option>
+                    <option value="-- Seleccione --" id="yearSelector">-- Seleccione --</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
@@ -49,21 +49,26 @@
             </div>
             <div class="container-input">
                 <label>Plan:</label>
-                <input type="radio" name="plan" value="basico" class="radio" id="radioBasico" /> Basico
-                <input type="radio" name="plan" value="intermedio" class="radio" id="radioIntermedio" /> Intermedio
-                <input type="radio" name="plan" value="completo" class="radio" id="radioCompleto" /> Completo
+                <select name="seguro" id="type">
+                    <option value="-- Seleccione --" id="typeSelector">-- Seleccione --</option>
+                    <option value="basico">BASICO</option>
+                    <option value="intermedio">INTERMEDIO</option>
+                    <option value="todo riesgo">TODO RIESGO</option>
+                </select>
             </div>
         </div>
-        <div class="btn-c">
+        <div class="btn-c" id="btn-cotizar">
             <p>Seleccione marca, modelo, año y plan</p>
-            <button id="btn-calculator" class="btn-c">COTIZAR</button>
+            <button id="btn-go" class="btn-c">COTIZAR</button>
         </div>
+        <p id="resultado" class="resultado"></p>
     </div>
 </body>
 
-<script src="../Js/app.js"></script>
-<script src="../Js/index.js"></script>
 <script src="../Js/theme.js"></script>
+<script src="../Js/brandSelector.js"></script>
+<script src="../Js/app.js"></script>
+<!-- <script src="../Js/prompt-alert.js"></script> -->
 <script src="https://kit.fontawesome.com/b7c68c043b.js" crossorigin="anonymous"></script>
 <!-- agregamamos la biblioteca de iconos -->
 
