@@ -1,41 +1,51 @@
-let precioBase = 0;
-let precioSeguro = 0;
-let finalPrice = 0;
 
 let brandSelector = document.getElementById('brandSelector');
 let modelSelector = document.getElementById('modelSelector');
 let yearSelector = document.getElementById('yearSelector');
 let typeSelector = document.getElementById('typeSelector');
 
+
 let buttonCotizar = document.getElementById('btn-go');
 
 function btnCotizar(){
-// Obtenes los valores pasados por el usuario (Marca, modelo y año)
+    // Obtenes los valores pasados por el usuario (Marca, modelo y año)
     let brand = document.getElementById('brand').value.toLowerCase();
     let model = document.getElementById('model').value.toLowerCase();
     let year = document.getElementById('year').value.toLowerCase();
     let type = document.getElementById('type').value.toLowerCase();
-
+    
     // Invocamos la funcion calcularSeguro y guardamos el resultado dentro de la variable para luego mostrarlo en el HTML
     let valorSeguro = calcularSeguro(brand, model, year, type);
-
+    
     // Mostramos el resultado en el HTML
-    document.getElementById('resultado').innerText = 'El valor del seguro es: $' + valorSeguro;
+    if(valorSeguro > 3499){document.getElementById('resultado').innerText = 'El valor del seguro es: $' + valorSeguro;
+        const newClient = {
+            "marca" : brand,
+            "modelo" : model,
+            "año" : year,
+            "seguro" : type
+        }
+    }else
+    {document.getElementById('resultado').innerText = 'Por favor complete el formulario'}
+
+
 }
 
 function calcularSeguro (brand, model, year, type){
-// Verificamos que el usuario haya ingresado todos los datos
+    // Verificamos que el usuario haya ingresado todos los datos
     (brand != '-- seleccione --') ? true : brandSelector.innerHTML = 'Seleccione una marca disponible';
     (model != '-- seleccione --') ? true : modelSelector.innerHTML = 'Seleccione un modelo disponible';
     (year != '-- seleccione --') ? true : yearSelector.innerHTML = 'Indique el año de su vehiculo';
     (type != '-- seleccione --') ? true : typeSelector.innerHTML = 'Seleccione un plan de seguro';
-
+    
     console.log("Brand:", brand.toUpperCase());
     console.log("Model:", model.toUpperCase());
     console.log("Year:", year);
     console.log("Type:", type.toUpperCase());
-
-
+    
+    let precioBase = 0;
+    let precioSeguro = 0;
+    let finalPrice = 0;
 
     if(brand === "toyota") { precioBase = 3000}
         else if(brand === "ford") {precioBase = 3500}
@@ -62,5 +72,7 @@ console.log("El precio despues de calcular años es: ", finalPrice);
 
 return finalPrice;
 }
+
+
 
 buttonCotizar.addEventListener('click', btnCotizar);
