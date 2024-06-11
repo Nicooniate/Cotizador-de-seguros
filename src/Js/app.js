@@ -20,8 +20,16 @@ function btnCotizar(){
     
     // Mostramos el resultado en el HTML
     if(valorSeguro > 3499){document.getElementById('resultado').innerText = 'El valor del seguro es: $' + valorSeguro;
-        }else
+        const newClient = {
+            "marca" : brand,
+            "modelo" : model,
+            "año" : year,
+            "seguro" : type
+        }
+        localStorage.setItem('clientStorage', JSON.stringify(newClient), console.log("Cliente guardado en base de datos"));
+    }else
         {document.getElementById('resultado').innerText = 'Por favor complete el formulario'}
+        
         
 
 
@@ -42,14 +50,14 @@ function calcularSeguro (brand, model, year, type){
     let precioBase = 0;
     let precioSeguro = 0;
     let finalPrice = 0;
-
+    
     if(brand === "toyota") { precioBase = 3000}
-        else if(brand === "ford") {precioBase = 3500}
-        else if(brand === "renault") {precioBase = 2500}
-        else if(brand === "volkswagen") {precioBase = 3500}
-
+    else if(brand === "ford") {precioBase = 3500}
+    else if(brand === "renault") {precioBase = 2500}
+    else if(brand === "volkswagen") {precioBase = 3500}
+    
     console.log("Precio base:", precioBase);
-
+    
     if(type === "basico"){precioSeguro = 2000}
         else if(type === "intermedio") {precioSeguro = 2500}
         else if(type === "todo riesgo") {precioSeguro = 3500}
@@ -69,12 +77,6 @@ console.log("El precio despues de calcular años es: ", finalPrice);
 return finalPrice;
 }
 
-const newClient = {
-    "marca" : brandSelector,
-    "modelo" : modelSelector,
-    "año" : yearSelector,
-    "seguro" : typeSelector
-}
 
 
 buttonCotizar.addEventListener('click', btnCotizar);
