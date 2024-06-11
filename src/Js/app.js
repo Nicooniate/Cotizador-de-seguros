@@ -5,6 +5,7 @@ let yearSelector = document.getElementById('yearSelector');
 let typeSelector = document.getElementById('typeSelector');
 
 
+
 let buttonCotizar = document.getElementById('btn-go');
 
 function btnCotizar(){
@@ -19,14 +20,9 @@ function btnCotizar(){
     
     // Mostramos el resultado en el HTML
     if(valorSeguro > 3499){document.getElementById('resultado').innerText = 'El valor del seguro es: $' + valorSeguro;
-        const newClient = {
-            "marca" : brand,
-            "modelo" : model,
-            "año" : year,
-            "seguro" : type
-        }
-    }else
-    {document.getElementById('resultado').innerText = 'Por favor complete el formulario'}
+        }else
+        {document.getElementById('resultado').innerText = 'Por favor complete el formulario'}
+        
 
 
 }
@@ -73,6 +69,12 @@ console.log("El precio despues de calcular años es: ", finalPrice);
 return finalPrice;
 }
 
+const newClient = {
+    "marca" : brandSelector,
+    "modelo" : modelSelector,
+    "año" : yearSelector,
+    "seguro" : typeSelector
+}
 
 
 buttonCotizar.addEventListener('click', btnCotizar);
