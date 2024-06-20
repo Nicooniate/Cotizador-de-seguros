@@ -36,7 +36,7 @@
 
 // Carga los datos del archivo JSON
 let carData = {};
-fetch('/carBrands.json')
+fetch('/cotizador-de-seguros/carBrands.json')
     .then(response => response.json())
     .then(data => {
         carData = data;
