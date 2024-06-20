@@ -35,9 +35,8 @@
 // });
 
 // Carga los datos del archivo JSON
-const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
 let carData = {};
-fetch(`${basePath}/carBrands.json`)
+fetch('/carBrands.json')
     .then(response => response.json())
     .then(data => {
         carData = data;
