@@ -35,13 +35,14 @@
 // });
 
 // Carga los datos del archivo JSON
+const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
 let carData = {};
-fetch('/src/carBrands.json')
+fetch(`${basePath}/carBrands.json`)
     .then(response => response.json())
     .then(data => {
         carData = data;
     })
-    .catch(error => console.error('Error al cargar el archivo JSON:', error)); // si el JSON no se puede cargar arroja un error en la consola
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
 document.getElementById('brand').addEventListener('change', function() {
     const brand = this.value;
@@ -54,7 +55,7 @@ document.getElementById('brand').addEventListener('change', function() {
     const selectedBrand = carData.cars ? carData.cars.find(car => car.marca === brand) : null;
 
     if (selectedBrand) {
-        // Añadde como opcion los modelos que corresponden a la marca seleccionada
+        // Añade como opción los modelos que corresponden a la marca seleccionada
         selectedBrand.modelo.forEach(model => {
             const option = document.createElement('option');
             option.value = model.toLowerCase();
