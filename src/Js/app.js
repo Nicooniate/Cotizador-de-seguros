@@ -19,20 +19,42 @@ function btnCotizar(){
     let valorSeguro = calcularSeguro(brand, model, year, type);
     
     // Mostramos el resultado en el HTML
-    if(valorSeguro > 3499){document.getElementById('resultado').innerText = 'El valor del seguro es: $' + valorSeguro;
+    if(valorSeguro > 3499){
+        let timerInterval;
+        Swal.fire({
+        color: "#4e78ff",
+        title: "CALCULANDO TU SEGURO",
+        html: "Estamos calculando tu mejor opción",
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+            timer.textContent = `${Swal.getTimerLeft()}`;
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("RESULTADO MOSTRADO AL CLIENTE");
+        }
+        });
+
+        document.getElementById('resultado').innerText = 'El valor del seguro es: $' + valorSeguro;
         const newClient = {
             "marca" : brand,
             "modelo" : model,
             "año" : year,
-            "seguro" : type
+            "seguro" : type,
+            "precio" : valorSeguro
         }
         localStorage.setItem('clientStorage', JSON.stringify(newClient), console.log("Cliente guardado en base de datos"));
     }else
         {document.getElementById('resultado').innerText = 'Por favor complete el formulario'}
-        
-        
-
-
 }
 
 function calcularSeguro (brand, model, year, type){

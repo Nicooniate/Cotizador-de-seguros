@@ -1,0 +1,40 @@
+{
+    "cars": [
+        {
+            "marca": "toyota",
+            "modelo": [
+                "Corolla",
+                "Etios",
+                "Yaris",
+                "Hilux"
+            ]
+        },
+        {
+            "marca": "ford",
+            "modelo": [
+                "Fiesta",
+                "Focus",
+                "Mustang",
+                "Ranger"
+            ]
+        },
+        {
+            "marca": "renault",
+            "modelo": [
+                "Clio",
+                "Megane",
+                "Fluence",
+                "Duster"
+            ]
+        },
+        {
+            "marca": "volkswagen",
+            "modelo": [
+                "Golf",
+                "Polo",
+                "Vento",
+                "Passat"
+            ]
+        }
+    ]
+}
