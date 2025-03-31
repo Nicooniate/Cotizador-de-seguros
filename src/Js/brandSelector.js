@@ -1,7 +1,7 @@
 // Carga los datos del archivo JSON
 
 let carData = {};
-fetch('/carBrands.json')
+fetch('./src/carBrands.json')
     .then(response => response.json())
     .then(data => {
         carData = data;
@@ -28,7 +28,6 @@ document.getElementById('brand').addEventListener('change', function() {
         });
     }
 });
-
 
 
 
